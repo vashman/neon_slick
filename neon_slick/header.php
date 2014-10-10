@@ -1,7 +1,10 @@
 <html>
 <head>
 <title><?php \wp_title(); \bloginfo('name'); ?></title>
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="test/css" media="all" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
+<style>
+<?php include('style.css'); ?>
+</style>
 <?php \wp_head(); ?>
 </head>
 <body>
