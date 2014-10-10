@@ -1,0 +1,195 @@
+/*Theme Name: neon_slick
+Theme URI: http://www.github.com/vashman/neon_slick
+Description: simple theme with complex menu and dark neon look.
+Version: 0.1
+Author: Sunny Sangha
+Author URI: http://www.github.com/vashman
+Tags: dark neon night bright menu
+*/
+
+body{
+  background-color: black;
+}
+
+/*  Navigation .........................................................*/
+.nav{
+  text-align: center;
+  margin: 30px auto;
+  font-family: "Museo";
+  font-size: 20px; text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px #ffff00, 
+  0 0 20px #ffff00, 
+  0 0 30px #ffff00, 
+  /* #ff00de for others listed below */
+  0 0 40px #0000ff, 
+  0 0 70px #0000ff, 
+  0 0 80px #0000ff, 
+  0 0 100px #0000ff, 
+  0 0 150px #0000ff;
+}
+
+ul.nav{
+  text-align: center;
+  list-style-type: none;
+  overflow: hidden;
+  margin:0cm 1cm 1cm 0cm;
+}
+	
+li.nav{
+  float:left;
+  margin-left: 10px;
+}
+
+a.nav{
+  display:inline;
+  width: 50px;
+}
+
+div.nav{
+  height: 40px;
+  padding: 10px;
+}
+
+/* Header ..............................................................*/
+.header{
+  text-align: center;
+  margin-right: 70px;
+  margin-left: 70px;
+}
+
+p.header{
+}
+
+div.header{
+}
+
+/* Footer ..............................................................*/
+.footer{
+}
+
+p.footer{
+  text-align: center;
+  margin: 30px auto;
+  font-family: "Museo";
+  font-size: 20px; text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px #000, 
+  0 0 20px #000, 
+  0 0 30px #000, 
+  /* #ff00de for others listed below*/
+  0 0 40px #0000ff, 
+  0 0 70px #0000ff, 
+  0 0 80px #0000ff, 
+  0 0 100px #0000ff, 
+  0 0 150px #0000ff;
+}
+
+div.footer{
+}
+
+/* Content ..........................................................*/
+.content{
+  background-color: black;
+  color: yellow;
+  border-style: solid;
+  border-color: red;
+  text-align: center;
+  text-align: justify;
+}
+
+p.content{
+  border:none;
+  text-align: center;
+  text-align:justify;
+}
+
+h1.content{
+border:none;
+  text-align: center;
+  margin: 30px auto;
+  font-family: "Museo";
+  font-size: 20px; text-transform:uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px #000, 
+  0 0 20px #000, 
+  0 0 30px #000, 
+  /* #ff00de for others listed below*/
+  0 0 40px #0000ff, 
+  0 0 70px #0000ff, 
+  0 0 80px #0000ff, 
+  0 0 100px #0000ff, 
+  0 0 150px #0000ff;
+}
+
+h2.content{
+  border:none;
+  text-align:center;
+  text-align: justify;
+}
+
+h3.content{
+  border:none;
+  text-align:center;
+}
+
+h4.content{
+  border:none;
+}
+
+a.content{
+}
+
+div.content{
+  border-radius:25px;
+  text-align: center;
+  margin-right:70px;
+  margin-left:70px;
+}
+
+/* Form ................................................................*/
+.form{
+  margin-left: auto;
+  margin-right: auto;
+  border:3px solid red;
+  text-align:center;
+}
+
+input.form{
+border:none;
+}
+
+p.form{
+border:none;
+}
+
+td.form{
+	color: yellow;
+	border:none;
+}
+
+
+/* post ................................................................*/
+.post{
+}
+
+/* post.suggestion .....................................................*/
+.post-suggestion{
+}
+
+/* Notification ........................................................*/
+.notification{}
+
+p.notification{}
+
+a.notification{}
+
+h1.notification{}
+
+h2.notification{}
+
+h3.notification{}
+
+h4.notification{}
+
+div.notification{}
