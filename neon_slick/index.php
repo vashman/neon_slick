@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <div class="main"> <div class="content">
+<h1 class="content">Recent Posts</h1>
 <?php
       /* print out table of new posts */
       $args = array(
