@@ -13,18 +13,19 @@
       define('MAX_COL', 5);
       $col_count = MAX_COL;
 ?>
-      <table><tr>
+      <table class="content"><tr class="content">
 <?php
       /* foreach new post */
       foreach ($posts as $post){
       \setup_postdata($post);
         if ($col_count == 0){
 ?>
-        </tr><tr>
-<?php $col_count = MAX_COL;
+        </tr><tr class="content">
+<?php 
+      $col_count = MAX_COL;
       }
 ?>
-      <td>
+      <td class="content">
 <?php
       the_title();
 ?>
@@ -38,5 +39,5 @@
       \wp_reset_postdata();
       /* end print out table */
 ?>
-</div> </div>
+</div></div>
 <?php get_footer(); ?>

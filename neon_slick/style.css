@@ -105,7 +105,7 @@ p.content{
 }
 
 h1.content{
-border:none;
+  border:none;
   text-align: center;
   margin: 30px auto;
   font-family: "Museo";
@@ -156,16 +156,16 @@ div.content{
 }
 
 input.form{
-border:none;
+  border:none;
 }
 
 p.form{
-border:none;
+  border:none;
 }
 
 td.form{
-	color: yellow;
-	border:none;
+  color: yellow;
+  border:none;
 }
 
 
