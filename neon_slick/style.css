@@ -21,7 +21,6 @@ body{
   text-shadow: 0 0 10px #ffff00, 
   0 0 20px #ffff00, 
   0 0 30px #ffff00, 
-  /* #ff00de for others listed below */
   0 0 40px #0000ff, 
   0 0 70px #0000ff, 
   0 0 80px #0000ff, 
@@ -48,7 +47,7 @@ a.nav{
 
 div.nav{
   height: 40px;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* Header ..............................................................*/
@@ -94,7 +93,7 @@ div.footer{
   color: yellow;
   border-style: solid;
   border-color: red;
-  text-align: center;
+  text-align: left;
   text-align: justify;
 }
 
@@ -141,10 +140,21 @@ a.content{
 }
 
 div.content{
-  border-radius:25px;
+  border-radius:12px;
   text-align: center;
   margin-right:70px;
   margin-left:70px;
+}
+
+table.content{
+  border: 0px;
+}
+
+tr.content{
+}
+
+td.content{
+  color: yellow;
 }
 
 /* Form ................................................................*/
@@ -193,3 +203,18 @@ h3.notification{}
 h4.notification{}
 
 div.notification{}
+
+/* search .............................................................*/
+.search{
+}
+
+div.search{
+  align: right;
+}
+
+table.search{
+}
+
+/* search-result ......................................................*/
+.search-result{
+}
