@@ -25,7 +25,7 @@
       $args = array(
       'post_type' => 'post'
       , 'post_status' => 'publish'
-      , 'post_per_page' => 20
+      , 'posts_per_page' => 20
       );
 
       $posts = \get_posts($args);
@@ -41,8 +41,8 @@
 ?>
         </tr><tr class="content">
 <?php 
-      $col_count = MAX_COL;
-      }
+        $col_count = MAX_COL;
+        }
 ?>
       <td class="content">
 <?php
