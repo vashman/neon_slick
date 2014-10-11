@@ -37,6 +37,8 @@ type="text/css" media="all"
       \get_search_form();
 ?>
 </div>
+<a href="<?php echo \wp_login_url(); ?>" title="Login" class="login">Login</a>
+<a href="gdfghf">rt</a>
 <div class="nav">
 <?php
       \wp_nav_menu(array (

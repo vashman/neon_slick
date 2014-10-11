@@ -260,7 +260,34 @@ td.form{
 }
 
 /* Notification ........................................................*/
-.notification{}
+.notification{
+  background-color:#e3f7fc; 
+  color:#555; 
+  border:.1em solid;
+  border-color: #8ed9f6;
+  border-radius:10px;
+  font-family:Tahoma,Geneva,Arial,sans-serif;
+  font-size:1.1em;
+  padding:10px 10px 10px 10px;
+  margin:10px;
+  cursor: default;
+}
+
+span.notification{
+  font-size: 0.9em;
+  font-family: Times New Roman;
+  border-radius: 1em;
+  padding: .1em .6em .1em .6em;
+  font-weight: bolder;
+  color: white;
+  background-color: #4E5A56;
+  background: #fff8c4;
+  background-color: #3229CF;
+}
+
+span.notification:before{
+  content: 'i';
+}
 
 p.notification{}
 

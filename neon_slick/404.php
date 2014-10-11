@@ -19,6 +19,9 @@
       \get_header();
 ?>
 <div class="404">
-Nothing was found 404.
-</div>
+<h1 class="notification"> Error: 404 </h1>
+<div class="notification">
+<span class="notification"></span>
+<p class="notification">Sorry Page Not Found</p>
+</div></div>
 <?php \get_footer(); ?>
