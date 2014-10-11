@@ -32,13 +32,12 @@ type="text/css" media="all"
 <body>
 <div class="header">
 <div class="logo">?</div>
+<a href="<?php echo \wp_login_url(); ?>" title="Login" class="login">Login</a>
 <div class="search">
 <?php
       \get_search_form();
 ?>
 </div>
-<a href="<?php echo \wp_login_url(); ?>" title="Login" class="login">Login</a>
-<a href="gdfghf">rt</a>
 <div class="nav">
 <?php
       \wp_nav_menu(array (
