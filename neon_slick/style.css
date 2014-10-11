@@ -29,19 +29,19 @@ body{
 
 /*  Navigation .........................................................*/
 .nav{
-  text-align: center;
-  margin: 30px auto;
+  text-align: left;
+  margin: 20px auto;
   font-family: "Museo";
   font-size: 20px; text-transform: uppercase;
   color: #fff;
   text-shadow: 0 0 10px #ffff00, 
-  0 0 20px #ffff00, 
-  0 0 30px #ffff00, 
-  0 0 40px #0000ff, 
-  0 0 70px #0000ff, 
-  0 0 80px #0000ff, 
-  0 0 100px #0000ff, 
-  0 0 150px #0000ff;
+               0 0 20px #ffff00, 
+               0 0 30px #ffff00, 
+               0 0 40px #0000ff, 
+               0 0 70px #0000ff, 
+               0 0 80px #0000ff, 
+               0 0 100px #0000ff, 
+               0 0 150px #0000ff;
 }
 
 ul.nav{
@@ -69,8 +69,8 @@ div.nav{
 /* Header ..............................................................*/
 .header{
   text-align: center;
-  margin-right: 70px;
-  margin-left: 70px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 p.header{
@@ -90,14 +90,14 @@ p.footer{
   font-size: 20px; text-transform: uppercase;
   color: #fff;
   text-shadow: 0 0 10px #000, 
-  0 0 20px #000, 
-  0 0 30px #000, 
+               0 0 20px #000, 
+               0 0 30px #000, 
   /* #ff00de for others listed below*/
-  0 0 40px #0000ff, 
-  0 0 70px #0000ff, 
-  0 0 80px #0000ff, 
-  0 0 100px #0000ff, 
-  0 0 150px #0000ff;
+               0 0 40px #0000ff, 
+               0 0 70px #0000ff, 
+               0 0 80px #0000ff, 
+               0 0 100px #0000ff, 
+               0 0 150px #0000ff;
 }
 
 div.footer{
@@ -106,7 +106,7 @@ div.footer{
 /* Content ..........................................................*/
 .content{
   background-color: black;
-  color: yellow;
+  color: white;
   border-style: solid;
   border-color: red;
   text-align: left;
@@ -116,7 +116,7 @@ div.footer{
 p.content{
   border:none;
   text-align: center;
-  text-align:justify;
+  text-align: justify;
 }
 
 h1.content{
@@ -124,7 +124,8 @@ h1.content{
   text-align: center;
   margin: 30px auto;
   font-family: "Museo";
-  font-size: 20px; text-transform:uppercase;
+  font-size: 20px;
+  text-transform:uppercase;
   color: #fff;
   text-shadow: 0 0 10px #000, 
   0 0 20px #000, 
@@ -138,32 +139,34 @@ h1.content{
 }
 
 h2.content{
-  border:none;
-  text-align:center;
+  border: none;
+  text-align: center;
   text-align: justify;
 }
 
 h3.content{
-  border:none;
-  text-align:center;
+  border: none;
+  text-align: center;
 }
 
 h4.content{
-  border:none;
+  border: none;
 }
 
 a.content{
 }
 
 div.content{
-  border-radius:12px;
+  border-radius: 20px;
   text-align: center;
-  margin-right:70px;
-  margin-left:70px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 table.content{
   border: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 tr.content{
@@ -171,6 +174,8 @@ tr.content{
 
 td.content{
   color: yellow;
+  text-align: center;
+  padding: 15px;
 }
 
 /* Form ................................................................*/
