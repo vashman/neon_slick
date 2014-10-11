@@ -230,10 +230,9 @@ div.notification{}
 }
 
 div.search{
-  align: right;
-}
-
-table.search{
+  position: fixed;
+  top: 20px;
+  right: 5px;
 }
 
 /* search-result ......................................................*/
