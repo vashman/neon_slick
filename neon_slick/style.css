@@ -33,7 +33,6 @@ body{
   line-height: 40px;
   margin: 5px auto;
   font-family: "Museo";
-  font-size: 20px; text-transform: uppercase;
   color: #fff;
   text-shadow: 0 0 10px #ffff00, 
                0 0 20px #ffff00, 
@@ -46,7 +45,7 @@ body{
 }
 
 ul.nav{
-  /*text-align: center;*/
+  text-align: center;
   list-style-type: none;
   overflow: hidden;
   margin:0cm 1cm 1cm 0cm;
@@ -57,16 +56,24 @@ ul.nav{
 nested ul class
 */	
 ul.nav li{
-  float:left;
-  display:inline;
-  margin-left: 0;
+  float: center;
+  display: inline;
+  margin-left: 9;
 }
 
-a.nav{
+/* find a thorugh nested ul.nav */
+ul.nav a{
+  color: white;
+  font-size: 20px; text-transform: uppercase;
   width: auto;
 }
 
+ul.nav a:hover{
+  color: blue;
+}
+
 div.nav{
+  text-align: center;
   border-radius: 20px;
   background-color: black;
   width: 100%;
