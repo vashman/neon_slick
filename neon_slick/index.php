@@ -44,11 +44,11 @@
         $col_count = MAX_COL;
         }
 ?>
-      <td class="content">
+      <td class="content"><span class="content">
 <?php
       the_title();
 ?>
-      </td>
+      </span></td>
 <?php
       $col_count--;
       } /* foreach new post end*/

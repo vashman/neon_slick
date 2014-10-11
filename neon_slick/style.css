@@ -124,12 +124,6 @@ div.footer{
 
 /* Content ..........................................................*/
 .content{
-  background-color: black;
-  color: white;
-  border-style: solid;
-  border-color: red;
-  text-align: left;
-  text-align: justify;
 }
 
 p.content{
@@ -180,54 +174,35 @@ div.content{
   text-align: center;
   margin-right: 20px;
   margin-left: 20px;
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-color: red;
+  text-align: left;
+  text-align: justify;*/
 }
 
-table.content{
+table.content {
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
 }
 
-th.content{
-  border: 1px solid blue;
-  border-top: 0;
-}
-
-th.content : first-child{
-  border-left: 0;
-}
-
-th.content : last-child{
-  border-right: 0;
-}
-
-tr.content{
-  border-left: 0;
-}
-
-tr.content : first-child{
-  border-top: 0;
-}
-
-tr.content : last-child{
-  border-bottom: 0;
-}
-
 td.content{
-  border: 1px solid blue;
-  color: yellow;
-  text-align: center;
-  padding: 15px;
-  border-bottom: 0;
+  color: white;
 }
 
-td.content : first-child{
-  border-left: 0;
+table.content tr.content {
+  border-bottom: 1pt solid white;
 }
 
-td.content : last-child{
-  border-right: 0;
+/* each element in a container, ie: thumbnail and title
+*/
+table.content td.content span.content{
+  background: #191918;
+  border-radius: 12px;
 }
+
 
 /* Form ................................................................*/
 .form{
