@@ -73,18 +73,20 @@ div.nav{
 
 /* Header ..............................................................*/
 .header{
-  position: static;
+  position: relative;
   text-align: center;
   margin-right: 0px;
   margin-left: 0px;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 p.header{
 }
 
 div.header{
+  width: 100%;
 }
 
 /* Footer ..............................................................*/
@@ -238,9 +240,20 @@ div.notification{}
 }
 
 div.search{
-  position: fixed;
-  top: 20px;
-  right: 5px;
+  position: relative;
+  top: 5%;
+  right: 0%;
+  left: 30%;
+}
+
+/* logo ................................................................*/
+.logo{
+}
+
+div.logo{
+  position: relative;
+  top: 20%;
+  right: 40%;
 }
 
 /* search-result ......................................................*/

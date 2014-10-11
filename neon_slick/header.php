@@ -32,7 +32,7 @@ type="text/css" media="all"
 <body>
 <div class="header">
 <div class="logo">?</div>
-<div class="serach">
+<div class="search">
 <?php
       \get_search_form();
 ?>
