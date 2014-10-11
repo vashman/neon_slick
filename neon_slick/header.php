@@ -51,7 +51,7 @@ type="text/css" media="all"
       , 'fallback_cb' => 'wp_page_menu'
       , 'before' => ''
       , 'after' => ''
-      , 'items_wrap' => '<ul class="nav"><li class="nav">%3$s</li></ul>'
+      , 'items_wrap' => '<ul class="nav">%3$s</ul>'
       , 'depth' => 0
       , 'walker' => ''
       ));
