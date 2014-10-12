@@ -48,8 +48,9 @@ ul.nav{
   text-align: center;
   list-style-type: none;
   overflow: hidden;
-  margin:0cm 1cm 1cm 0cm;
   padding: 0;
+  /* position */
+  margin:0cm 1cm 1cm 0cm;
 }
 
 /* can not change the class of li items in wp, so find them through
@@ -74,27 +75,26 @@ ul.nav a:hover{
 
 div.nav{
   text-align: center;
-  border-radius: 20px;
-  background-color: black;
+  background-color: #26261A;
   width: 100%;
   height: 40px;
   padding: 2px;
+  position: fixed;
 }
 
 /* Header ..............................................................*/
 .header{
-  position: relative;
   margin-right: 0px;
   margin-left: 0px;
   top: 0;
   left: 0;
-  width: 100%;
 }
 
 p.header{
 }
 
 div.header{
+  position: fixed;
   width: 100%;
 }
 
@@ -120,6 +120,8 @@ p.footer{
 }
 
 div.footer{
+  position: absolute;
+  bottom: 1%;
 }
 
 /* Content ..........................................................*/
@@ -172,14 +174,16 @@ a.content{
 div.content{
   border-radius: 20px;
   text-align: center;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 4%;
+  margin-left: 4%;
   background-color: black;
   color: white;
   border-style: solid;
   border-color: red;
-  text-align: left;
-  text-align: justify;*/
+  position: absolute;
+  top: 150px;
+  right: 0%;
+  left: 0%;
 }
 
 table.content {
@@ -202,7 +206,6 @@ table.content td.content span.content{
   background: #191918;
   border-radius: 12px;
 }
-
 
 /* Form ................................................................*/
 .form{
@@ -283,20 +286,33 @@ div.notification{}
 }
 
 div.search{
-  position: relative;
+  position: absolute;
   top: 5%;
-  right: 0%;
-  left: 30%;
+  right: 3px;
+  left: 50%;
 }
 
 /* logo ................................................................*/
 .logo{
 }
 
+p.logo{
+  position: static;
+   color: #fff;
+  text-shadow: 0 0 10px #000, 
+               0 0 20px #000, 
+               0 0 30px #000, 
+  /* #ff00de for others listed below*/
+               0 0 40px #0000ff, 
+               0 0 70px #0000ff, 
+               0 0 80px #0000ff, 
+               0 0 100px #0000ff, 
+               0 0 150px #0000ff;
+}
+
 div.logo{
-  position: relative;
-  top: 20%;
-  right: 40%;
+  position: absolute;
+  left: 12%;
 }
 
 /* search-result ......................................................*/
