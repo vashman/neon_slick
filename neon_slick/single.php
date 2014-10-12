@@ -18,14 +18,14 @@
 */
       \get_header();
 ?>
-<div class="single-post"> <div class="post">
+<div class="single-post"> <div class="content">
 <?php /* get post content */
       if(\have_posts()){
       while(\have_posts()){
       \the_post();
 ?>
-      <h1 class="post"><?php \the_title(); ?></h1>
-      <p class="post"><?php \the_content(''); ?></p>
+      <h1 class="content"><?php \the_title(); ?></h1>
+      <p class="content"><?php \the_content(''); ?></p>
 <?php
       }
       }

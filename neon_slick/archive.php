@@ -18,4 +18,15 @@
 */
       \get_header();
 ?>
+<div class="content">
+<?php if (\is_category()) { ?>
+      <h2><?php \single_cat_title(); ?> Catagory</h2>
+<?php } elseif (\is_month()) { ?>
+      <h2><?php the_time('F', 'Y'); ?></h2>
+<?php }
+      while(\have_posts()){
+      \the_post();
+      }
+?>
+</div>
 <?php \get_footer(); ?>
