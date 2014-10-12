@@ -31,8 +31,8 @@ type="text/css" media="all"
 </head>
 <body>
 <div class="header">
-<div class="logo">?</div>
 <a href="<?php echo \wp_login_url(); ?>" title="Login" class="login">Login</a>
+<div class="logo"><p class="logo"><?php echo(\bloginfo('name')); ?></p></div>
 <div class="search">
 <?php
       \get_search_form();

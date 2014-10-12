@@ -302,6 +302,7 @@ div.search{
   top: 5%;
   right: 3px;
   left: 50%;
+  color: white;
 }
 
 /* logo ................................................................*/
@@ -310,7 +311,7 @@ div.search{
 
 p.logo{
   position: static;
-   color: #fff;
+  color: white;
   text-shadow: 0 0 10px #000, 
                0 0 20px #000, 
                0 0 30px #000, 
@@ -323,8 +324,21 @@ p.logo{
 }
 
 div.logo{
-  position: absolute;
+  position: static;
   left: 12%;
+  top: 0%;
+  bottom: -20%;
+}
+
+/* Login ...............................................................*/
+.login{
+  position: absolute;
+}
+
+a.login{
+  color: white;
+  position: static;
+  left: 0%
 }
 
 /* search-result ......................................................*/
