@@ -45,6 +45,7 @@
         }
 ?>
       <td class="content"><span class="content">
+       &hearts;
       <a class="content" href=" <?php the_permalink(); ?> ">
 <?php
       the_title();
