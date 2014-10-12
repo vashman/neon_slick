@@ -20,7 +20,15 @@
 ?>
 <div class="single-post"> <div class="post">
 <?php /* get post content */
-      post();
+      if(\have_posts()){
+      while(\have_posts()){
+      \the_post();
+?>
+      <h1 class="post"><?php \the_title(); ?></h1>
+      <p class="post"><?php \the_content(''); ?></p>
+<?php
+      }
+      }
 ?>
 </div>
 <div class="post-suggestions">
@@ -34,7 +42,7 @@
       );
       $posts = \get_posts($args);
       define('MAX_ROW', 5);
-      $col_count = MAX_COL
+      $col_count = MAX_ROW;
 
       foreach ($posts as $post){
       \setup_postdata($post);
@@ -42,6 +50,7 @@
 ?>
         </tr><tr class="post-suggestions">
 <?php
+        $col_count = MAX_ROW;
         }
 ?>
       <td class="post-suggestions">
@@ -51,6 +60,7 @@
       </td>
 <?php
       }
+      \comments_template();
 ?>
 </tr></table>
 </div></div>
