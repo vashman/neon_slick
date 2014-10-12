@@ -45,9 +45,11 @@
         }
 ?>
       <td class="content"><span class="content">
+      <a class="content" href=" <?php the_permalink(); ?> ">
 <?php
       the_title();
 ?>
+      </a>
       </span></td>
 <?php
       $col_count--;

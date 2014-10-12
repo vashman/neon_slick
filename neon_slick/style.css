@@ -192,14 +192,24 @@ table.content {
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
+  width: 85%;
 }
 
 td.content{
   color: white;
+  padding: 2px;
 }
 
 table.content tr.content {
   border-bottom: 1pt solid white;
+}
+
+a.content{
+  color: white;
+}
+
+a.content:hover{
+  color: red;
 }
 
 /* each element in a container, ie: thumbnail and title
