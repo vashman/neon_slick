@@ -16,6 +16,29 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+/* Structure
+
+<div class="header">
+
+  <a class="login">
+  </a>
+
+  <div class="logo">
+    <p class="logo">
+    </p>
+  </div>
+
+  <div class="search">
+  </div>
+
+  <div class="nav">
+  <ul class="nav">
+  </ul>
+  </div>
+
+</div>
+
+*/
 ?>
 <html><head>
 <title><?php \wp_title(); \bloginfo('name'); ?></title>
