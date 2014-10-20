@@ -16,6 +16,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+/* Structure
+
+<div class="404">
+  <h1 class="notification"></h1>
+
+  <div class="notification">
+    <span class="notification"></span>
+    <p clss="notification"></p>
+  </div>
+
+</div>
+
+*/
       \get_header();
 ?>
 <div class="404">

@@ -16,6 +16,23 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+/* Structure
+
+<div class="single-post">
+
+  <div class="content">
+    <h1 class=""></h1>
+    <p class=""></p>
+  </div>
+
+  <div class="post-suggestions">
+    <table class="post-suggestions">
+    </table>
+  </div>
+
+</div>
+
+*/
       \get_header();
 ?>
 <div class="single-post"> <div class="content">
@@ -40,6 +57,7 @@
       , '' => 'publish'
       , '' => 10
       );
+
       $posts = \get_posts($args);
       define('MAX_ROW', 5);
       $col_count = MAX_ROW;
@@ -54,9 +72,7 @@
         }
 ?>
       <td class="post-suggestions">
-<?php
-      \the_title();
-?>
+<?php \the_title(); ?>
       </td>
 <?php
       }

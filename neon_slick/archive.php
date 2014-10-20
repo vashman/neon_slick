@@ -16,11 +16,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+/* Structure
+
+<div class="content">
+  <h1 class=""></h1>
+  <h2 class=""></h2>
+</div>
+
+*/
       \get_header();
 ?>
 <div class="content">
 <?php if (\is_category()) { ?>
-      <h2><?php \single_cat_title(); ?> Catagory</h2>
+      <h1><?php \single_cat_title(); ?> Catagory</h1>
 <?php } elseif (\is_month()) { ?>
       <h2><?php the_time('F', 'Y'); ?></h2>
 <?php }

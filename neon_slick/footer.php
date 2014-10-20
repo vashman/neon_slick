@@ -16,8 +16,22 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+/* Structure
+
+<div class="footer">
+
+  <div class="nav">
+    <ul>
+    {<li> ...}
+    </ul>
+  </div>
+
+</div>
+
+*/
 ?>
 <div class="footer">
+<div class="nav">
 <?php \wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
-</div>
+</div></div>
 </body></html>

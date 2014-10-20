@@ -16,6 +16,25 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+/* Structure
+
+<div clss="main">
+
+  <div class="content">
+    <h1 class="content"></h1>
+    <table class="content">
+      <tr clas="content">
+        <td class="content">
+          <span class="content">
+            <a class="content"></a>
+          </span>
+        </td>
+      </tr>
+  </div>
+
+</div>
+
+*/
       \get_header();
 ?>
 <div class="main"> <div class="content">
