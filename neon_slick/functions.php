@@ -30,7 +30,7 @@ register_menu(
 
 /* ### Theme Menu ### */
 define ('MY_OPTION_GROUP', 'my-option-group');
-define ('THEME_MENU_SLUG', 'AdvancedMenu')
+define ('THEME_MENU_SLUG', 'AdvancedMenu');
 
 function
 add_theme_menu(
