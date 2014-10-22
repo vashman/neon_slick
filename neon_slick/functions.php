@@ -28,5 +28,67 @@ register_menu(
 );
 }
 
-\add_action('init', 'register_menu');
+/* ### Theme Menu ### */
+define ('MY_OPTION_GROUP', 'my-option-group');
+
+function
+add_theme_menu(
+){
+\add_submenu_page(
+    'themes.php' /* add to apperance menu */
+  , 'Advance Theme Apperance' /* page title */
+  , 'Advanced'
+  , ''
+  , 'AdvancedMenu' /* slug */
+  , 'create_theme_menu_cb' /* callback */
+);
+ \add_action('admin_init', 'register_settings');
+}
+
+/* register settings for theme */
+function
+register_settings(
+){
+\register_setting(MY_OPTION_GROUP, 'css-file');
+/*\add_settings_section(
+    MY_OPTION_GROUP
+  , ''
+);*/
+}
+
+function
+create_theme_menu_cb(
+){
+  if (\current_user_can('manage_options') == false){
+  \wp_die(__('No Acess'));
+  }
+?> <div class="wrap">
+   <h2>Neon Theme Options</h2>
+   <form method="post" action="options.php">
+   <?php
+   \settings_fileds(MY_OPTION_GROUP);
+   \do_settings_sections(MY_OPTION_GROUP);
+   \submit_button();
+   ?>
+   </form>
+   </div> <?php
+}
+
+/* validate and make changes to the sumbitted form */
+function
+validate_theme_form(
+  $input
+){
+foreach ($input as $k => $v){
+$newinput[$k] = $v;
+}
+return $newinput;
+}
+
+/* add hooks */
+  if (\is_admin()){
+  \add_action('admin_menu', 'add_theme_menu');
+  } else {
+  \add_action('init', 'register_menu');
+  }
 ?>
