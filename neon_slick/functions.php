@@ -65,7 +65,7 @@ create_theme_menu_cb(
    <h2>Neon Theme Options</h2>
    <form method="post" action="options.php">
    <?php
-   \settings_fileds(MY_OPTION_GROUP);
+   \settings_fields(MY_OPTION_GROUP);
    \do_settings_sections(MY_OPTION_GROUP);
    \submit_button();
    ?>
