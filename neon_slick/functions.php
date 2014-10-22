@@ -34,13 +34,12 @@ define ('MY_OPTION_GROUP', 'my-option-group');
 function
 add_theme_menu(
 ){
-\add_submenu_page(
-    'themes.php' /* add to apperance menu */
-  , 'Advance Theme Apperance' /* page title */
+\add_theme_page(
+    'Advance Theme Apperance' /* page title */
   , 'Advanced'
-  , ''
-  , 'AdvancedMenu' /* slug */
-  , 'create_theme_menu_cb' /* callback */
+  , 'edit_theme_options'
+  , 'AdvancedMenu'
+  , 'create_theme_menu_cb'
 );
  \add_action('admin_init', 'register_settings');
 }
