@@ -81,6 +81,7 @@ function
 create_theme_style_option(
   $args
 ){
+echo('<h3>Style<h3>');
 }
 
 function
