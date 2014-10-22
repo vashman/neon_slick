@@ -42,7 +42,6 @@ add_theme_menu(
   , THEME_MENU_SLUG
   , 'create_theme_menu_cb'
 );
- \add_action('admin_init', 'register_settings');
 }
 
 /* register settings for theme */
@@ -116,6 +115,7 @@ return $newinput;
 /* add hooks */
   if (\is_admin()){
   \add_action('admin_menu', 'add_theme_menu');
+  \add_action('admin_init', 'register_settings');
   } else {
   \add_action('init', 'register_menu');
   }
