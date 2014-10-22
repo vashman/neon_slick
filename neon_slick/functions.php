@@ -30,6 +30,7 @@ register_menu(
 
 /* ### Theme Menu ### */
 define ('MY_OPTION_GROUP', 'my-option-group');
+define ('THEME_MENU_SLUG', 'AdvancedMenu')
 
 function
 add_theme_menu(
@@ -38,7 +39,7 @@ add_theme_menu(
     'Advance Theme Apperance' /* page title */
   , 'Advanced'
   , 'edit_theme_options'
-  , 'AdvancedMenu'
+  , THEME_MENU_SLUG
   , 'create_theme_menu_cb'
 );
  \add_action('admin_init', 'register_settings');
@@ -49,10 +50,37 @@ function
 register_settings(
 ){
 \register_setting(MY_OPTION_GROUP, 'css-file');
-/*\add_settings_section(
+\add_settings_section(
     MY_OPTION_GROUP
-  , ''
-);*/
+  , 'Style'
+  , 'create_theme_style_options'
+  , THEME_MENU_SLUG
+);
+
+\add_settings_field(
+    MY_OPTION_GROUP
+  , 'Style'
+  , 'create_theme_css_selecter'
+  , THEME_MENU_SLUG
+  , 'Style'
+);
+}
+
+/* should echo the output*/
+function
+create_theme_css_selecter(
+  $args
+){
+echo(
+'<dl><dt>CSS</dt><dd>DESCRIPTION</dd></dl>'
+);
+}
+
+/* output theme section html. Should use echo for outpt. */
+function
+create_theme_style_option(
+  $args
+){
 }
 
 function
