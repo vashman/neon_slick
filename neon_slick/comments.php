@@ -17,7 +17,23 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /* Structure
-*/
 
-\comments_number('No Comments', '1 Comment', '% Comments');
+<div class="content">
+
+  <div class="comments-count">
+  </div>
+
+  <div class="comments">
+  </div>
+
+</div>
+
+*/
 ?>
+<div class="content">
+  <div class="comments-count">
+  <?php \comments_number('No Comments', '1 Comment', '% Comments'); ?>
+  </div>
+  <div class="comments">
+  </div>
+</div>
