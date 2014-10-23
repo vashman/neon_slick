@@ -19,8 +19,14 @@
 /* Structure
 
 <div class="content">
-  <h1 class=""></h1>
-  <h2 class=""></h2>
+  <h1 class="content"></h1>
+  <h2 class="content"></h2>
+  {
+   <div class="content">
+     <div class="post">
+     </div>
+   </div>
+  ...}
 </div>
 
 */
@@ -31,10 +37,14 @@
       <h1><?php \single_cat_title(); ?> Catagory</h1>
 <?php } elseif (\is_month()) { ?>
       <h2><?php the_time('F', 'Y'); ?></h2>
+      <div class="content">
 <?php }
       while(\have_posts()){
+      ?> <div class="post"> <?php
       \the_post();
       }
+      ?> </div> <?php
 ?>
+     </div>
 </div>
 <?php \get_footer(); ?>
