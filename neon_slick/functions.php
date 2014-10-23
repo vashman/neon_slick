@@ -71,7 +71,9 @@ create_theme_css_selecter(
   $args
 ){
 echo(
-'<dl><dt>CSS</dt><dd>DESCRIPTION</dd></dl>'
+'<select>
+  <option>neon_slick</option>
+</select>'
 );
 }
 
