@@ -102,8 +102,9 @@ echo('<select><option value="" name="'.CSS_SELECTER.'" id="'.CSS_SELECTER.'"> re
   }
   }
 echo('</select>');
-echo('Current css file: ');
+echo('<label for="'.CSS_SELECTER.'">Current css file: ');
 \css_style_sheet();
+echo('</label>');
 closedir($handle);
 }
 
