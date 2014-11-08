@@ -78,10 +78,11 @@ function
 css_style_sheet(
 ){
 $css = \get_option('css-file', false);
+var_dump($css);
   if (false == $css){
-  return \bloginfo('stylesheet_url');
+  \bloginfo('stylesheet_url');
   }
-return $css;
+echo(\get_template_directory() . '/css/' . $css);
 }
 
 /* should echo the output*/
@@ -98,6 +99,8 @@ echo('<select>');
   }
   }
 echo('</select>');
+echo('Current css file: ');
+\css_style_sheet();
 closedir($handle);
 }
 
