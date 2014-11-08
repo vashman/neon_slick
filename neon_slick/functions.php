@@ -17,6 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/* register menu locations in the theme.*/
 function
 register_menu(
 ){
@@ -32,6 +33,7 @@ register_menu(
 define ('MY_OPTION_GROUP', 'my-option-group');
 define ('THEME_MENU_SLUG', 'AdvancedMenu');
 
+/* add theme menu pages */
 function
 add_theme_menu(
 ){
