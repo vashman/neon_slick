@@ -78,9 +78,16 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select>
-  <option>neon_slick</option>
-</select>');
+echo('<select>');
+  if ($handle = opendir(\get_template_director() . '/css')){
+  while (false !== $($entry = readdir($handle))){
+    if ($entry != '.' && $entry != '..'){
+    echo('<option value="' . $entry' . ">' . $entry . '</option>');
+    }
+  }
+  }
+echo('</select>');
+closedir($handle);
 }
 
 /* output theme section html. Should use echo for outpt. */
