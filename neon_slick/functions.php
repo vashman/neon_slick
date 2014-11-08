@@ -37,8 +37,8 @@ add_theme_menu(
 ){
 \add_theme_page(
     'Advance Theme Apperance' /* page title */
-  , 'Advanced'
-  , 'edit_theme_options'
+  , 'Advanced' /* label in menu */
+  , 'edit_theme_options' /* premissons / capability */
   , THEME_MENU_SLUG
   , 'create_theme_menu_cb'
 );
