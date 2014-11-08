@@ -78,11 +78,9 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo(
-'<select>
+echo('<select>
   <option>neon_slick</option>
-</select>'
-);
+</select>');
 }
 
 /* output theme section html. Should use echo for outpt. */
@@ -104,7 +102,7 @@ create_theme_menu_cb(
    <form method="post" action="options.php">
    <?php
    \settings_fields(MY_OPTION_GROUP);
-   \do_settings_sections(MY_OPTION_GROUP);
+   \do_settings_sections(THEME_MENU_SLUG);
    \submit_button();
    ?>
    </form>
