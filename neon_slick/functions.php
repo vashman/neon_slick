@@ -81,6 +81,7 @@ $css = \get_option('css-file', false);
 var_dump($css);
   if (false == $css){
   \bloginfo('stylesheet_url');
+  return;
   }
 echo(\get_template_directory() . '/css/' . $css);
 }
