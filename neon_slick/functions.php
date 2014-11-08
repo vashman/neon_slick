@@ -93,7 +93,7 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select>');
+echo('<select><option value="" name="'.CSS_SELECTER.'" id="'.CSS_SELECTER.'"> remove style </option>');
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
