@@ -85,7 +85,7 @@ echo('<select>
 
 /* output theme section html. Should use echo for outpt. */
 function
-create_theme_style_option(
+create_theme_style_options(
   $args
 ){
 echo('<h3>Style<h3>');
