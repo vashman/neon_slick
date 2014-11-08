@@ -45,9 +45,6 @@
 <link rel="stylesheet" href="<?php \css_style_sheet(); ?>"
 type="text/css" media="all"
 />
-<style>
-<?php include('style.css'); ?>
-</style>
 <?php
       \wp_head();
 ?>

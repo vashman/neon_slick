@@ -53,7 +53,9 @@ add_theme_menu(
 /* css-file sanitize */
 function
 css_sanitize(
+  $input
 ){
+return $input;
 }
 
 /* register settings for theme */
@@ -82,12 +84,11 @@ function
 css_style_sheet(
 ){
 $css = \get_option(CSS_FILE, false);
-var_dump($css);
   if (false == $css){
   \bloginfo('stylesheet_url');
   return;
   }
-echo(\get_template_directory() . '/css/' . $css);
+echo(\get_stylesheet_directory_uri().'/css/' . $css);
 }
 
 /* should echo the output*/
