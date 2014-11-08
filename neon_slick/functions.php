@@ -44,11 +44,17 @@ add_theme_menu(
 );
 }
 
+/* css-file sanitize */
+function
+css_sanitize(
+){
+}
+
 /* register settings for theme */
 function
 register_settings(
 ){
-\register_setting(MY_OPTION_GROUP, 'css-file');
+\register_setting(MY_OPTION_GROUP, 'css-file', 'css_sanitize');
 \add_settings_section(
     MY_OPTION_GROUP
   , 'Style'
@@ -57,11 +63,11 @@ register_settings(
 );
 
 \add_settings_field(
-    MY_OPTION_GROUP
+    'css_selecter'
   , 'Style'
   , 'create_theme_css_selecter'
   , THEME_MENU_SLUG
-  , 'Style'
+  , MY_OPTION_GROUP
 );
 }
 
