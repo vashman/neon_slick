@@ -77,7 +77,7 @@ register_settings(
 function
 css_style_sheet(
 ){
-$css = \get_option('css-file', false)
+$css = \get_option('css-file', false);
   if (false == $css){
   return \bloginfo('stylesheet_url');
   }
