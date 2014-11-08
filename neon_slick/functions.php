@@ -73,6 +73,17 @@ register_settings(
 );
 }
 
+/* get the current set css style sheet */
+function
+css_style_sheet(
+){
+$css = \get_option('css-file', false)
+  if (false == $css){
+  return \bloginfo('stylesheet_url');
+  }
+return $css;
+}
+
 /* should echo the output*/
 function
 create_theme_css_selecter(
