@@ -63,7 +63,7 @@ register_settings(
 \register_setting(MY_OPTION_GROUP, CSS_FILE, 'css_sanitize');
 \add_settings_section(
     MY_OPTION_GROUP
-  , 'Style'
+  , 'Site Style'
   , 'create_theme_style_options'
   , THEME_MENU_SLUG
 );
@@ -134,17 +134,6 @@ create_theme_menu_cb(
    ?>
    </form>
    </div> <?php
-}
-
-/* validate and make changes to the sumbitted form */
-function
-validate_theme_form(
-  $input
-){
-foreach ($input as $k => $v){
-$newinput[$k] = $v;
-}
-return $newinput;
 }
 
 /* add hooks */
