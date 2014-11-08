@@ -32,6 +32,8 @@ register_menu(
 /* ### Theme Menu ### */
 define ('MY_OPTION_GROUP', 'my-option-group');
 define ('THEME_MENU_SLUG', 'AdvancedMenu');
+/* field ids */
+define ('CSS_SELECTER', 'css_selecter');
 
 /* add theme menu pages */
 function
@@ -65,7 +67,7 @@ register_settings(
 );
 
 \add_settings_field(
-    'css_selecter'
+    CSS_SELECTER
   , 'Style'
   , 'create_theme_css_selecter'
   , THEME_MENU_SLUG
@@ -95,7 +97,7 @@ echo('<select>');
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
-    echo('<option value="' . $entry . '">' . $entry . '</option>');
+    echo('<option value="' . $entry . '" name="' . CSS_SELECTER . '" id="' . CSS_SELECTER .'">' . $entry . '</option>');
     }
   }
   }
