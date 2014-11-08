@@ -32,6 +32,8 @@ register_menu(
 /* ### Theme Menu ### */
 define ('MY_OPTION_GROUP', 'my-option-group');
 define ('THEME_MENU_SLUG', 'AdvancedMenu');
+/* options */
+define ('CSS_FILE', 'css-file');
 /* field ids */
 define ('CSS_SELECTER', 'css_selecter');
 
@@ -58,7 +60,7 @@ css_sanitize(
 function
 register_settings(
 ){
-\register_setting(MY_OPTION_GROUP, 'css-file', 'css_sanitize');
+\register_setting(MY_OPTION_GROUP, CSS_FILE, 'css_sanitize');
 \add_settings_section(
     MY_OPTION_GROUP
   , 'Style'
@@ -68,7 +70,7 @@ register_settings(
 
 \add_settings_field(
     CSS_SELECTER
-  , 'Style'
+  , 'style sheet'
   , 'create_theme_css_selecter'
   , THEME_MENU_SLUG
   , MY_OPTION_GROUP
@@ -79,7 +81,7 @@ register_settings(
 function
 css_style_sheet(
 ){
-$css = \get_option('css-file', false);
+$css = \get_option(CSS_FILE, false);
 var_dump($css);
   if (false == $css){
   \bloginfo('stylesheet_url');
@@ -93,11 +95,11 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select><option value="" name="'.CSS_SELECTER.'" id="'.CSS_SELECTER.'"> remove style </option>');
+echo('<select><option value="" name="'.CSS_FILE.'" id="'.CSS_SELECTER.'"> remove style </option>');
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
-    echo('<option value="' . $entry . '" name="' . CSS_SELECTER . '" id="' . CSS_SELECTER .'">' . $entry . '</option>');
+    echo('<option value="' . $entry . '" name="' . CSS_FILE . '" id="' . CSS_SELECTER .'">' . $entry . '</option>');
     }
   }
   }
