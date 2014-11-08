@@ -17,6 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/* register menu locations in the theme.*/
 function
 register_menu(
 ){
@@ -28,5 +29,102 @@ register_menu(
 );
 }
 
-\add_action('init', 'register_menu');
+/* ### Theme Menu ### */
+define ('MY_OPTION_GROUP', 'my-option-group');
+define ('THEME_MENU_SLUG', 'AdvancedMenu');
+
+/* add theme menu pages */
+function
+add_theme_menu(
+){
+\add_theme_page(
+    'Advance Theme Apperance' /* page title */
+  , 'Advanced' /* label in menu */
+  , 'edit_theme_options' /* premissons / capability */
+  , THEME_MENU_SLUG
+  , 'create_theme_menu_cb'
+);
+}
+
+/* css-file sanitize */
+function
+css_sanitize(
+){
+}
+
+/* register settings for theme */
+function
+register_settings(
+){
+\register_setting(MY_OPTION_GROUP, 'css-file', 'css_sanitize');
+\add_settings_section(
+    MY_OPTION_GROUP
+  , 'Style'
+  , 'create_theme_style_options'
+  , THEME_MENU_SLUG
+);
+
+\add_settings_field(
+    'css_selecter'
+  , 'Style'
+  , 'create_theme_css_selecter'
+  , THEME_MENU_SLUG
+  , MY_OPTION_GROUP
+);
+}
+
+/* should echo the output*/
+function
+create_theme_css_selecter(
+  $args
+){
+echo('<select>
+  <option>neon_slick</option>
+</select>');
+}
+
+/* output theme section html. Should use echo for outpt. */
+function
+create_theme_style_options(
+  $args
+){
+echo('<h3>Style<h3>');
+}
+
+function
+create_theme_menu_cb(
+){
+  if (\current_user_can('manage_options') == false){
+  \wp_die(__('No Acess'));
+  }
+?> <div class="wrap">
+   <h2>Neon Theme Options</h2>
+   <form method="post" action="options.php">
+   <?php
+   \settings_fields(MY_OPTION_GROUP);
+   \do_settings_sections(THEME_MENU_SLUG);
+   \submit_button();
+   ?>
+   </form>
+   </div> <?php
+}
+
+/* validate and make changes to the sumbitted form */
+function
+validate_theme_form(
+  $input
+){
+foreach ($input as $k => $v){
+$newinput[$k] = $v;
+}
+return $newinput;
+}
+
+/* add hooks */
+  if (\is_admin()){
+  \add_action('admin_menu', 'add_theme_menu');
+  \add_action('admin_init', 'register_settings');
+  } else {
+  \add_action('init', 'register_menu');
+  }
 ?>
