@@ -80,9 +80,9 @@ create_theme_css_selecter(
 ){
 echo('<select>');
   if ($handle = opendir(\get_template_directory() . '/css')){
-  while (false !== $($entry = readdir($handle))){
+  while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
-    echo('<option value="' . $entry' . ">' . $entry . '</option>');
+    echo('<option value="' . $entry . '">' . $entry . '</option>');
     }
   }
   }
