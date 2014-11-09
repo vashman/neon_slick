@@ -142,6 +142,34 @@ create_theme_menu_cb(
    </div> <?php
 }
 
+/* show recent posts for catagory */
+function
+show_recent_posts(
+  $title
+, $col_count
+, $args
+){ ?>
+<h1 class="content"><?php $title ?></h1>
+<?php $posts = \get_posts($args); ?>
+<table class="content"><tr class="content">
+<? $i = $col_count
+foreach ($posts as $post){ /* foreach row */
+\setup_postdata($post);
+   if ($i == 0){ ?>
+   </tr><tr class="content"> <?php
+   $i = $col_count;
+   }
+?><td class="content"><span class="content">
+<a class="content" href=" <?php the_permalink(); ?>">
+<?php
+\the_title();?>
+</a></span></td><?php
+$i--;
+}
+?></tr></table><?php
+\wp_reset_postdata();
+} /* show_recent_posts */
+
 /* add hooks */
   if (\is_admin()){
   \add_action('admin_menu', 'add_theme_menu');
