@@ -148,25 +148,24 @@ show_recent_posts(
   $title
 , $col_count
 , $args
-){ ?>
-<h1 class="content"><?php $title ?></h1>
-<?php $posts = \get_posts($args); ?>
-<table class="content"><tr class="content">
-<? $i = $col_count
+){
+echo ('<h1 class="content">' . $title . '</h1>');
+$posts = \get_posts($args);
+echo('<table class="content"><tr class="content">');
+$i = $col_count;
 foreach ($posts as $post){ /* foreach row */
 \setup_postdata($post);
-   if ($i == 0){ ?>
-   </tr><tr class="content"> <?php
+   if ($i == 0){
+   echo('</tr><tr class="content">');
    $i = $col_count;
    }
-?><td class="content"><span class="content">
-<a class="content" href=" <?php the_permalink(); ?>">
-<?php
-\the_title();?>
-</a></span></td><?php
+echo('<td class="content"><span class="content">');
+echo('<a class="content" href="'); \the_permalink(); echo('">');
+\the_title();
+echo('</a></span></td>');
 $i--;
 }
-?></tr></table><?php
+echo('</tr></table>');
 \wp_reset_postdata();
 } /* show_recent_posts */
 
