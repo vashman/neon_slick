@@ -55,7 +55,11 @@ function
 css_sanitize(
   $input
 ){
-return $input;
+$output = '';
+$output = $input;
+//var_dump($input);
+//exit;
+return \apply_filters('css_sanitize_filter', $output, $input);
 }
 
 /* register settings for theme */
@@ -96,7 +100,7 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select><option value="" name="'.CSS_FILE.'" id="'.CSS_SELECTER.'"> remove style </option>');
+echo('<select><option value="" name="' . CSS_FILE . '" id="' . CSS_SELECTER . '"> remove style </option>');
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
@@ -123,10 +127,11 @@ function
 create_theme_menu_cb(
 ){
   if (\current_user_can('manage_options') == false){
-  \wp_die(__('No Acess'));
+  \wp_die(__('No Access'));
   }
+  \settings_errors();
 ?> <div class="wrap">
-   <h2>Neon Theme Options</h2>
+   <h2>Theme Options</h2>
    <form method="post" action="options.php">
    <?php
    \settings_fields(MY_OPTION_GROUP);
