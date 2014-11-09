@@ -150,6 +150,7 @@ show_recent_posts(
 , $col_count
 , $args
 ){
+/* set globals for wp query loop */
 global $post;
 global $posts;
 echo ('<h1 class="content">' . $title . '</h1>');
