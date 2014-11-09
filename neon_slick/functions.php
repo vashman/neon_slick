@@ -33,9 +33,11 @@ register_menu(
 define ('MY_OPTION_GROUP', 'my-option-group');
 define ('THEME_MENU_SLUG', 'AdvancedMenu');
 /* options */
-define ('CSS_FILE', 'css-file');
-/* field ids */
+define ('CSS_FILE', 'css-file'); // css string file name
+define ('RECENT_CATS', 'ns_recent_cats'); // recent posts category array
+/* field ids used by id tags for rendered fields */
 define ('CSS_SELECTER', 'css_selecter');
+define ('RECENT_CATS_SELECTER', 'ns_recent_cats_selecter');
 
 /* add theme menu pages */
 function
@@ -50,7 +52,7 @@ add_theme_menu(
 );
 }
 
-/* css-file sanitize */
+/* css-file save sanitize */
 function
 css_sanitize(
   $input
@@ -62,11 +64,23 @@ $output = $input;
 return \apply_filters('css_sanitize_filter', $output, $input);
 }
 
+/* show recent categorys sanitize on save */
+function
+recent_cat_sanitize(
+  $input
+){
+$output = '';
+$output = $input;
+return \apply_filters('recent_cats_filter', $output, $input);
+}
+
 /* register settings for theme */
 function
 register_settings(
 ){
 \register_setting(MY_OPTION_GROUP, CSS_FILE, 'css_sanitize');
+//\register_setting(MY_OPTION_GROUP, RECENT_CATS, 'recent_cat_sanitize');
+
 \add_settings_section(
     MY_OPTION_GROUP
   , 'Site Style'
@@ -76,12 +90,43 @@ register_settings(
 
 \add_settings_field(
     CSS_SELECTER
-  , 'style sheet'
+  , 'style sheet' // title
   , 'create_theme_css_selecter'
   , THEME_MENU_SLUG
   , MY_OPTION_GROUP
 );
+/*
+\add_settings_section(
+    MY_OPTION_GROUP
+  , ''
+  , '__return_false'
+  , THEME_MENU_SLUG
+){
+}*/
+/*
+\add_settings_field(
+    RECENT_POSTS_SELECTER
+  , 'Recent Posts Categorys'
+  , 'create_theme_recents_cats_selecter'
+  , THEME_MENU_SLUG
+  , MY_OPTION_GROUP
+);*/
 }
+/*
+function
+get_recent_cats(
+){
+$saved = (array)\get_option(RECENT_CATS);
+$defaults = array(
+  'titles' => array('Recent Posts')
+, 'cats' => array('uncatgorized') // comma seperated list of catagory slug
+, 'cols' => array(1) // list of ints, max posts in row
+, 'max_show' => array(5) // list of ints, max posts to show
+);
+$options = \wp_parse_args($saved, $defaults);
+$options = array_intersect_key($options, $defualts);
+return $options;
+}*/
 
 /* get the current set css style sheet */
 function
@@ -100,7 +145,7 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select><option value="" name="' . CSS_FILE . '" id="' . CSS_SELECTER . '"> remove style </option>');
+echo('<select name="' . CSS_FILE . '" id="'.CSS_SELECTER.'" name=><option value=""> remove style </option>');
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
@@ -113,6 +158,13 @@ echo('<label for="'.CSS_SELECTER.'">Current css file: ');
 \css_style_sheet();
 echo('</label>');
 closedir($handle);
+}
+
+/**/
+function
+recent_posts_category_selecter(
+){
+
 }
 
 /* output theme section html. Should use echo for outpt. */
