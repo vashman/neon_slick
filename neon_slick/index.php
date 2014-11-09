@@ -38,47 +38,15 @@
       \get_header();
 ?>
 <div class="main"> <div class="content">
-<h1 class="content">Recent Posts</h1>
 <?php
       /* print out table of new posts */
       $args = array(
-      'post_type' => 'post'
-      , 'post_status' => 'publish'
-      , 'posts_per_page' => 20
       );
-
-      $posts = \get_posts($args);
-      define('MAX_COL', 5);
-      $col_count = MAX_COL;
-?>
-      <table class="content"><tr class="content">
-<?php
-      /* foreach new post */
-      foreach ($posts as $post){
-      \setup_postdata($post);
-        if ($col_count == 0){
-?>
-        </tr><tr class="content">
-<?php 
-        $col_count = MAX_COL;
-        }
-?>
-      <td class="content"><span class="content">
-       &hearts;
-      <a class="content" href=" <?php the_permalink(); ?> ">
-<?php
-      the_title();
-?>
-      </a>
-      </span></td>
-<?php
-      $col_count--;
-      } /* foreach new post end*/
-?>
-      </tr></table>
-<?php
-      \wp_reset_postdata();
-      /* end print out table */
+\show_recent_posts('Recent Posts', 5, array(
+  'post_type' => 'post'
+, 'post_status' => 'publish'
+, 'posts_per_page' => 20)
+);
 ?>
 </div></div>
-<?php get_footer(); ?>
+<?php \get_footer(); ?>
