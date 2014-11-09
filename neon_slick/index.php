@@ -45,12 +45,11 @@
 , 'post_status' => 'publish'
 , 'posts_per_page' => 5)
 );
-
 \show_recent_posts('Recent Test1 Posts', 5, array(
   'post_type' => 'post'
 , 'post_status' => 'publish'
 , 'posts_per_page' => 2
-, 'catagory_name' => 'Test1')
+, 'category_name' => 'test1')
 );
 ?>
 </div></div>
