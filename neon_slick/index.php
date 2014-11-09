@@ -39,13 +39,18 @@
 ?>
 <div class="main"> <div class="content">
 <?php
-      /* print out table of new posts */
-      $args = array(
-      );
-\show_recent_posts('Recent Posts', 5, array(
+/* print out table of new posts */
+\show_recent_posts('Recent Posts', 2, array(
   'post_type' => 'post'
 , 'post_status' => 'publish'
 , 'posts_per_page' => 5)
+);
+
+\show_recent_posts('Recent Test1 Posts', 5, array(
+  'post_type' => 'post'
+, 'post_status' => 'publish'
+, 'posts_per_page' => 2
+, 'catagory_name' => 'Test1')
 );
 ?>
 </div></div>

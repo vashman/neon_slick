@@ -142,13 +142,16 @@ create_theme_menu_cb(
    </div> <?php
 }
 
-/* show recent posts for catagory */
+/* show recent posts for catagory
+print out table of new posts */
 function
 show_recent_posts(
   $title
 , $col_count
 , $args
 ){
+global $post;
+global $posts;
 echo ('<h1 class="content">' . $title . '</h1>');
 $posts = \get_posts($args);
 echo('<table class="content"><tr class="content">');
