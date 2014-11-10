@@ -249,6 +249,18 @@ echo('</tr></table>');
 \wp_reset_postdata();
 } /* show_recent_posts */
 
+/* show recent posts for settings, calls show recent posts in a loop for
+all saved sections saved in settings.
+*/
+function
+show_recent_posts_for(
+){
+$settings = get_recent_cats();
+foreach($settings as $setting){
+show_recent_posts($setting['title']);
+}
+}
+
 /* add hooks */
   if (\is_admin()){
   \add_action('admin_menu', 'add_theme_menu');
