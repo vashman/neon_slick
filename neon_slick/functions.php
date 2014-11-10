@@ -107,7 +107,7 @@ register_settings(
 
 
 \add_settings_field(
-    RECENT_POSTS_SELECTER
+    RECENT_CATS_SELECTER
   , 'Recent Posts'
   , 'create_theme_recents_cats_selecter'
   , THEME_MENU_SLUG
@@ -164,17 +164,18 @@ closedir($handle);
 
 /* create html for front page posts selecter */
 function
-recent_posts_category_selecter(
+create_theme_recents_cats_selecter(
   $args
 ){
 $cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
+$i = 0;
 foreach($cats as $cat){
-echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.'"name="'.RECENT_CATS.'[cats]" value="'.$cat->slug.
+echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.'"name="'.RECENT_CATS.'[cats]" value="'.$cat->slug.
   '"/>' . $cat->name . ' : ' . $cat->description. '</label>');
 }
-echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="text" name="'.RECENT_CATS.'[titles]"/>Title</label>');
-echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="text" name="'.RECENT_CATS.'[col]"/>Columns</label>');
-echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="text" name="'.RECENT_CATS.'[max_show]"/>Max Posts</label>');
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" name="'.RECENT_CATS.'[titles]"/>Title</label>');
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" name="'.RECENT_CATS.'[col]"/>Columns</label>');
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" name="'.RECENT_CATS.'[max_show]"/>Max Posts</label>');
 }
 
 /* output theme section html. Should use echo for outpt. */
