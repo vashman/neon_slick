@@ -32,9 +32,11 @@ register_menu(
 /* ### Theme Menu ### */
 define ('MY_OPTION_GROUP', 'my-option-group');
 define ('THEME_MENU_SLUG', 'AdvancedMenu');
+
 /* options */
 define ('CSS_FILE', 'css-file'); // css string file name
 define ('RECENT_CATS', 'ns_recent_cats'); // recent posts category array
+
 /* field ids used by id tags for rendered fields */
 define ('CSS_SELECTER', 'css_selecter');
 define ('RECENT_CATS_SELECTER', 'ns_recent_cats_selecter');
@@ -59,8 +61,6 @@ css_sanitize(
 ){
 $output = '';
 $output = $input;
-//var_dump($input);
-//exit;
 return \apply_filters('css_sanitize_filter', $output, $input);
 }
 
@@ -69,6 +69,8 @@ function
 recent_cat_sanitize(
   $input
 ){
+var_dump($input);
+exit;
 $output = '';
 $output = $input;
 return \apply_filters('recent_cats_filter', $output, $input);
@@ -79,7 +81,7 @@ function
 register_settings(
 ){
 \register_setting(MY_OPTION_GROUP, CSS_FILE, 'css_sanitize');
-//\register_setting(MY_OPTION_GROUP, RECENT_CATS, 'recent_cat_sanitize');
+\register_setting(MY_OPTION_GROUP, RECENT_CATS, 'recent_cat_sanitize');
 
 \add_settings_section(
     MY_OPTION_GROUP
@@ -95,22 +97,22 @@ register_settings(
   , THEME_MENU_SLUG
   , MY_OPTION_GROUP
 );
-/*
+
 \add_settings_section(
     MY_OPTION_GROUP
-  , ''
+  , 'Front Page'
   , '__return_false'
   , THEME_MENU_SLUG
-){
-}*/
-/*
+);
+
+
 \add_settings_field(
     RECENT_POSTS_SELECTER
-  , 'Recent Posts Categorys'
+  , 'Recent Posts'
   , 'create_theme_recents_cats_selecter'
   , THEME_MENU_SLUG
   , MY_OPTION_GROUP
-);*/
+);
 }
 /*
 function
@@ -160,11 +162,19 @@ echo('</label>');
 closedir($handle);
 }
 
-/**/
+/* create html for front page posts selecter */
 function
 recent_posts_category_selecter(
+  $args
 ){
-
+$cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
+foreach($cats as $cat){
+echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.'"name="'.RECENT_CATS.'[cats]" value="'.$cat->slug.
+  '"/>' . $cat->name . ' : ' . $cat->description. '</label>');
+}
+echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="text" name="'.RECENT_CATS.'[titles]"/>Title</label>');
+echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="text" name="'.RECENT_CATS.'[col]"/>Columns</label>');
+echo('<label for="'.RECENT_CATS_SELECTER.'"><input type="text" name="'.RECENT_CATS.'[max_show]"/>Max Posts</label>');
 }
 
 /* output theme section html. Should use echo for outpt. */
