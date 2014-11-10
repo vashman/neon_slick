@@ -1,0 +1,100 @@
+/* Themes are picked by mathing selected theme to file name minus the .css file extenstion.
+There for if a css file uses all the normal classes, then the theme should switch all elements with out a proble.
+PS: by desgin you only style marked tags and let the default browser stlye everything else.
+*/
+
+/* Navigation */
+.nav{}
+
+ul.nav{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  padding-top:6px;
+  padding-bottom:6px;
+}
+  
+ul.nav li{
+  display:inline;
+ }
+ 
+ul.nav a{
+  font-weight:bold;
+  color:#FFFFFF;
+  background-color:#BA2504;
+  text-align:center;
+  padding:4px;
+  text-decoration:none;
+}
+
+div.nav{
+  text-align:center;
+  margin:0px
+}
+
+/* Header */
+.header{
+  text-align: center;
+  margin-right: 70px;
+  margin-left: 70px;
+  position: relative;
+  height: 150px;
+  }
+p.header{}
+div.header{}
+
+/* Footer */
+.footer{
+  text-align: center;
+  margin-right: 70px;
+  margin-left: 70px;
+  position: relative;
+  height: 150px;}
+p.footer{}
+div.footer{
+  border-style:solid;
+  border-color:black;
+  }
+
+/* ** Content ** */
+/* General */
+.content{
+
+    }
+p.content{	margin: 0px;
+  padding: 0px;
+  background: #FFF;
+  font-size: 12pt;
+  color: #4C4C4C;
+  text-align: center;
+  text-align: justify;}
+a.content{
+  color:#BA2504;
+  }
+div.content{}
+
+/* Form */
+.form{}
+input.form{}
+p.form{}
+
+/* Important */
+.important{}
+p.important{}
+a.imprtant{}
+div.important{}
+
+/* Notification */
+.notification{
+  color:#BA2504;
+  text-transform:uppercase;
+  }
+p.notification{}
+a.notification{}
+h1.notification{}
+h2.notification{}
+h3.notification{}
+h4.notification{}
+div.notification{
+  border-style:solid;
+  border-color:red;}

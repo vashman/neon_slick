@@ -1,0 +1,198 @@
+/* Navigation ***********************************************************/
+.nav{
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  width=193px;
+}
+
+ul.nav{
+  list-style: none;
+  text-indent: 0px;
+}
+
+li.nav{
+  border:2px solid;
+  border-color:grey;
+  border-radius:25px;
+  margin-top: 3px;
+}
+
+ul.nav a{
+  font: 12px Verdana;
+  padding: 4px;
+  color: #646464;
+  display:block;
+  padding: 6px 30px;
+  height: 20px;
+  text-decoration: none;
+}
+
+ul.nav a:hover{
+  padding: 6px 40px;
+}
+
+div.nav{
+  align:left;
+  border-radius:25px;
+  width:50%;
+}
+
+/* Header ***************************************************************/
+.header{
+  align:right;
+  float:right;
+}
+
+img.header{
+  width:50%
+}
+
+div.header{
+  align:right;
+  width:50%
+  float:right;
+}
+
+/* Footer ***************************************************************/
+.footer{}
+
+p.footer{
+  align:center;
+}
+
+div.footer{
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+  border-top-style: double;
+  border-bottom-style: double;
+  border-top-color: #E1A60A;
+  border-bottom-color: #E1A60A;
+  padding: 8px 0px;
+}
+
+/* ** Content ** */
+/* General **************************************************************/
+.content{}
+
+p.content{
+  font-family:"New Century Schoolbook", serif;
+  align:left;
+}
+
+a.content{
+  align:left;
+}
+
+div.content{
+  align:right;
+}
+
+h1.content{
+  position: relative;
+  margin-left: -22px; /* 15px padding + 7px border ribbon shadow*/
+  margin-right: -22px;
+  padding: 15px;
+  background: #e5e5e5;
+  background: -moz-linear-gradient(#f5f5f5, #e5e5e5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
+  background: -webkit-linear-gradient(#f5f5f5, #e5e5e5);
+  background: -o-linear-gradient(#f5f5f5, #e5e5e5);
+  background: -ms-linear-gradient(#f5f5f5, #e5e5e5);
+  background: linear-gradient(#f5f5f5, #e5e5e5);
+  -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  text-shadow: 0 1px 0 #fff;
+}
+
+h1.content:before {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content:'';
+  border-top: 6px solid #555;
+  border-left: 6px solid transparent;
+}
+
+h1.content:after{
+  border-top: 6px solid #555;
+  border-right: 6px solid transparent;
+  border-left: none;
+  left: auto;
+  right: 0;
+  bottom: -6px;
+}
+
+h2,h3,h4.content{
+  position:relative;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  background: #C4BEC0;
+  /*margin: 0 0 15px -15px;*/
+  padding: 5px 15px;
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+h2,h3,h4.content:after{
+  content: "";
+  position: relative;
+  z-index: -1;
+  bottom: 15px;
+  right: 15px;
+  width: 70%;
+  height: 10px;
+  background:#7A7677;
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, .7);
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, .7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, .7);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+/* Form */
+.form{}
+
+input.form{}
+
+p.form{}
+
+/* Important */
+.important{}
+
+p.important{
+  font-family:"New Century Schoolbook", serif;
+  font-size:20%;
+}
+
+h1,h2,h3,h4,h5,h6.important{
+  margin-left: -22px;
+  margin-right: -22px;
+  padding: 15px;
+  background: #F70C24;
+}
+
+div.important{}
+
+/* Notification */
+.notification{}
+
+p.notification{
+  font-family:"New Century Schoolbook", serif;
+  font-size:20px;
+}
+
+h1.notification{
+  margin-left: -22px;
+  margin-right: -22px;
+  padding: 15px;
+  background: #985CFF;
+}
+
+div.notification{}

@@ -1,0 +1,170 @@
+/* Navigation ***********************************************************/
+.nav{
+}
+
+ul.nav{
+  text-align: center;
+  margin:0cm 1cm 1cm 0cm;
+}
+
+li.nav{
+  display: inline;
+  font-size: 13pt;
+  font-weight: bold; 
+  background-color:black;
+}
+
+div.nav{
+  height:9px;
+  border-bottom:1px solid #7A6363;
+  background-color:#600000;
+  padding: 20px;
+  padding-top: 0.76%;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+ul.nav a{
+  display:inline;
+  color:yellow;
+}
+
+ul.nav a:hover{
+  display:inline;
+  padding: 10px;
+  text-decoration:none;
+  background-color:#0066FF;
+  text-align:center;
+  color:#0E0202;
+}
+
+/* Header */
+.header{}
+
+p.header{}
+
+div.header{
+  background-color: #22CCD5;
+  height:200px;
+  margin:0 auto;
+  margin-bottom:0px;
+  margin-top: 0px;
+  margin-left:75px;
+  margin-right:75px;
+  border-bottom:0px solid #ccc;
+  border-top:1px solid #ccc;
+}
+
+img.header{
+  /*max-width:100%;*/
+  width: 100%;
+  height: 200px;
+}
+
+/* Form */
+form.form{text-align: center;}
+
+h1.form{text-align: center;}
+
+p.form{font-size: 13pt;
+text-align: center;
+}
+
+table.form{
+  text-align: center;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+tbody{text-align: center;}
+
+tr.form{text-align: center;
+margin-left: 50px;
+}
+
+form{text-align: center;}
+
+td.form{text-align: center;}
+
+/* Footer */
+.footer{
+clear:both;
+width:960px;
+
+}
+
+p.footer{
+  padding:20px; 
+  margin-left: 135px;
+  margin-right: 170px;
+  text-align: center;
+}
+
+div.footer{
+  width:960px;
+  height:80px;
+}
+
+div.box_slide{
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+div.carousel-box{
+  text-align: center;		
+}
+
+/* ** Content ** */
+/* General **************************************************************/
+.content{
+  font-family: georgia,sans-serif;
+  margin-left: 70px;
+  margin-right: 70px;
+  text-align: center;
+  text-align: justify;
+  background-color: gray;
+}
+
+p.content{
+  font-family: georgia,sans-serif;
+}
+
+a.content{}
+
+div.content{
+  border-radius:25px;
+  text-align: center;
+  margin-right:70px;
+  margin-left:70px;
+}
+
+img.content{
+}
+
+/* Important ************************************************************/
+.important{
+  color:red;
+  background-color: black;
+}
+
+p.important{}
+
+a.imprtant{}
+
+div.important{
+  background-color: black;
+  boarder-color: red;
+}
+
+.notification{
+  text-align: center;	
+}
+
+p.notification{
+  text-align: center;	
+}
+
+a.notification{
+  text-align: center;	
+}
