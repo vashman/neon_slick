@@ -71,8 +71,13 @@ recent_cat_sanitize(
 ){
 var_dump($input);
 exit;
-$output = '';
-$output = $input;
+$output = get_recent_cats();
+/* check if input is new or editing a previous element by its index id
+number. */
+  if ($input['cat_index']){ // edit previous data
+
+  } elseif($input['cat_index'] == -2) { // delete to array
+  }
 return \apply_filters('recent_cats_filter', $output, $input);
 }
 
@@ -114,7 +119,7 @@ register_settings(
   , MY_OPTION_GROUP
 );
 }
-/*
+
 function
 get_recent_cats(
 ){
@@ -126,9 +131,9 @@ $defaults = array(
 , 'max_show' => array(5) // list of ints, max posts to show
 );
 $options = \wp_parse_args($saved, $defaults);
-$options = array_intersect_key($options, $defualts);
+$options = array_intersect_key($options, $defaults);
 return $options;
-}*/
+}
 
 /* get the current set css style sheet */
 function
@@ -147,7 +152,7 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select name="' . CSS_FILE . '" id="'.CSS_SELECTER.'" name=><option value=""> remove style </option>');
+echo('<select name="' . CSS_FILE . '" id="'.CSS_SELECTER.'"><option value=""> remove style </option>');
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
@@ -167,8 +172,15 @@ function
 create_theme_recents_cats_selecter(
   $args
 ){
-$cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
+$ps = get_recent_cats();
 $i = 0;
+var_dump($ps);
+echo('<select name="" id=""><option value="-1">Add New</option>');
+foreach($ps as $pp){
+echo('<option value="'.$i.'">'.$pp[0][$i++].'</option>');
+}
+echo('</select>');
+$cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
 foreach($cats as $cat){
 /* each option selected is part of a sub array */
 echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.$i.'"name="'.RECENT_CATS.'[cats]['.$i.']" value="'.$cat->slug.
