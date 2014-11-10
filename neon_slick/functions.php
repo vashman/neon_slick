@@ -170,12 +170,13 @@ create_theme_recents_cats_selecter(
 $cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
 $i = 0;
 foreach($cats as $cat){
-echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.'"name="'.RECENT_CATS.'[cats]" value="'.$cat->slug.
+/* each option selected is part of a sub array */
+echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.$i.'"name="'.RECENT_CATS.'[cats]['.$i.']" value="'.$cat->slug.
   '"/>' . $cat->name . ' : ' . $cat->description. '</label>');
 }
-echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" name="'.RECENT_CATS.'[titles]"/>Title</label>');
-echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" name="'.RECENT_CATS.'[col]"/>Columns</label>');
-echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" name="'.RECENT_CATS.'[max_show]"/>Max Posts</label>');
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS.'[titles]"/>Title</label>');
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS.'[col]"/>Columns</label>');
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS.'[max_show]"/>Max Posts</label>');
 }
 
 /* output theme section html. Should use echo for outpt. */
