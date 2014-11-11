@@ -71,12 +71,13 @@ recent_cat_sanitize(
 ){
 var_dump($input);
 exit;
-$output = get_recent_cats();
+$options = get_recent_cats();
 /* check if input is new or editing a previous element by its index id
 number. */
-  if ($input['cat_index']){ // edit previous data
-
-  } elseif($input['cat_index'] == -2) { // delete to array
+  if ($input['index'] == -1){ // add new
+  array_push($options, $input);
+  } elseif ($input['index'] < count($options)){ // edit previous data
+  $options[$input['index']] = $input;
   }
 return \apply_filters('recent_cats_filter', $output, $input);
 }
@@ -123,15 +124,17 @@ register_settings(
 function
 get_recent_cats(
 ){
-$saved = (array)\get_option(RECENT_CATS);
-$defaults = array(
-  'titles' => array('Recent Posts')
-, 'cats' => array('uncatgorized') // comma seperated list of catagory slug
-, 'cols' => array(1) // list of ints, max posts in row
-, 'max_show' => array(5) // list of ints, max posts to show
-);
-$options = \wp_parse_args($saved, $defaults);
-$options = array_intersect_key($options, $defaults);
+$options = (array)\get_option(RECENT_CATS);
+  if (count($options) == 0){
+  $options = array(
+  array = (
+    'title' => 'Recent Posts'
+  , 'cats' => array('uncatagorized')
+  , 'col' => 5
+  , 'max_posts' => 20
+  )
+  );
+  }
 return $options;
 }
 
@@ -152,11 +155,15 @@ function
 create_theme_css_selecter(
   $args
 ){
-echo('<select name="' . CSS_FILE . '" id="'.CSS_SELECTER.'"><option value=""> remove style </option>');
+// Blank to remove variable thus disabling it.
+echo('<select name="'.CSS_FILE.'" id="'.CSS_SELECTER.'">'
+  .'<option value=""> remove style </option>'
+);
   if ($handle = opendir(\get_template_directory() . '/css')){
   while (false !== ($entry = readdir($handle))){
     if ($entry != '.' && $entry != '..'){
-    echo('<option value="' . $entry . '" name="' . CSS_FILE . '" id="' . CSS_SELECTER .'">' . $entry . '</option>');
+    echo('<option value="'.$entry.'" name="'.CSS_FILE.'" id="'
+      .CSS_SELECTER.'">'.$entry.'</option>');
     }
   }
   }
@@ -167,28 +174,55 @@ echo('</label>');
 closedir($handle);
 }
 
-/* create html for front page posts selecter */
+/* create html for front page posts selecter 
+<select name="[index]">
+  <option value="-1">Add New</option>
+  <option value="id">Title</option>
+</select>
+
+<label for=$id>
+  <input id=$id type="checkbox" name="[cats][$id]" value="$cat->slug">
+  $cat->name : $cat->description
+</label>
+*/
 function
 create_theme_recents_cats_selecter(
   $args
 ){
-$ps = get_recent_cats();
+$options = get_recent_cats();
 $i = 0;
-var_dump($ps);
-echo('<select name="" id=""><option value="-1">Add New</option>');
-foreach($ps as $pp){
-echo('<option value="'.$i.'">'.$pp[0][$i++].'</option>');
+var_dump($options);
+echo('<select name="'.RECENT_CATS
+. '[index]" id=""><option value="-1">Add New</option>'
+);
+foreach($options as $option){
+echo('<option value="'.$i.'">'.$option['title'].'</option>');
 }
 echo('</select>');
 $cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
 foreach($cats as $cat){
 /* each option selected is part of a sub array */
-echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" id="'.RECENT_CATS_SELECTER.$i.'"name="'.RECENT_CATS.'[cats]['.$i.']" value="'.$cat->slug.
-  '"/>' . $cat->name . ' : ' . $cat->description. '</label>');
+echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" '.
+  'id="'.RECENT_CATS_SELECTER.$i.'"name="'.RECENT_CATS.'[cats][.'$i'.]"'
+  . 'value="'.$cat->slug.
+  '"/>' . $cat->name . ' : ' . $cat->description. '</label>'
+);
 }
-echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS.'[titles]"/>Title</label>');
-echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS.'[col]"/>Columns</label>');
-echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text" id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS.'[max_show]"/>Max Posts</label>');
+/* the following echo produces something like.
+</br><label><input type="text" name="RECENT_CATS[title]">Title</label>
+</br><label><input type="text" name="RECENT_CATS[col]">Columns</label>
+</br><label><input type="text" name="RECENT_CATS[max_show]">Max</label>
+*/
+echo('</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text"'
+. 'id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS
+. '[title]"/>Title</label>'
+. '</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text"'
+. 'id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS
+. '[col]"/>Columns</label>'
+. '</br><label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="text"'
+. 'id="'.RECENT_CATS_SELECTER.$i.'" name="'.RECENT_CATS
+. '[max_show]"/>Max Posts</label>'
+);
 }
 
 /* output theme section html. Should use echo for outpt. */
@@ -257,7 +291,12 @@ show_recent_posts_for(
 ){
 $settings = get_recent_cats();
 foreach($settings as $setting){
-show_recent_posts($setting['title']);
+show_recent_posts($setting['title'], $setting['cols'], array(
+  'post_type' => 'post'
+, 'post_status' => 'publish'
+, 'posts_per_page' => $setting[max_show]
+, 'category_name' => implode(', ', $setting['cats'])
+));
 }
 }
 
