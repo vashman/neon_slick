@@ -17,6 +17,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+namespace neon_slick_namespace;
+
 /* register menu locations in the theme.*/
 function
 register_menu(
@@ -30,16 +32,16 @@ register_menu(
 }
 
 /* ### Theme Menu ### */
-define ('MY_OPTION_GROUP', 'my-option-group');
-define ('THEME_MENU_SLUG', 'AdvancedMenu');
+define ('MY_OPTION_GROUP', __NAMESPACE__ . 'my-option-group');
+define ('THEME_MENU_SLUG', __NAMESPACE__ . 'AdvancedMenu');
 
 /* options */
-define ('CSS_FILE', 'css-file'); // css string file name
-define ('RECENT_CATS', 'ns_recent_cats'); // recent posts category array
+define ('CSS_FILE', __NAMESPACE__ 'css-file'); // css string file name
+define ('RECENT_CATS', __NAMESPACE__ . 'recent_cats'); // recent posts category array
 
 /* field ids used by id tags for rendered fields */
-define ('CSS_SELECTER', 'css_selecter');
-define ('RECENT_CATS_SELECTER', 'ns_recent_cats_selecter');
+define ('CSS_SELECTER', __NAMESPACE__ . 'css_selecter');
+define ('RECENT_CATS_SELECTER', __NAMESPACE__ . 'recent_cats_selecter');
 
 /* add theme menu pages */
 function
@@ -50,7 +52,7 @@ add_theme_menu(
   , 'Advanced' /* label in menu */
   , 'edit_theme_options' /* premissons / capability */
   , THEME_MENU_SLUG
-  , 'create_theme_menu_cb'
+  , __NAMESPACE__ . 'create_theme_menu_cb'
 );
 }
 
@@ -86,8 +88,8 @@ return \apply_filters('recent_cats_filter', $output, $input);
 function
 register_settings(
 ){
-\register_setting(MY_OPTION_GROUP, CSS_FILE, 'css_sanitize');
-\register_setting(MY_OPTION_GROUP, RECENT_CATS, 'recent_cat_sanitize');
+\register_setting(MY_OPTION_GROUP, CSS_FILE, __NAMESPACE__ .'css_sanitize');
+\register_setting(MY_OPTION_GROUP, RECENT_CATS, __NAMESPAE__ . 'recent_cat_sanitize');
 
 \add_settings_section(
     MY_OPTION_GROUP
@@ -99,7 +101,7 @@ register_settings(
 \add_settings_field(
     CSS_SELECTER
   , 'style sheet' // title
-  , 'create_theme_css_selecter'
+  , __NAMESPACE__ . 'create_theme_css_selecter'
   , THEME_MENU_SLUG
   , MY_OPTION_GROUP
 );
@@ -115,7 +117,7 @@ register_settings(
 \add_settings_field(
     RECENT_CATS_SELECTER
   , 'Recent Posts'
-  , 'create_theme_recents_cats_selecter'
+  , __NAMESPACE__ . 'create_theme_recents_cats_selecter'
   , THEME_MENU_SLUG
   , MY_OPTION_GROUP
 );
@@ -302,9 +304,9 @@ show_recent_posts($setting['title'], $setting['cols'], array(
 
 /* add hooks */
   if (\is_admin()){
-  \add_action('admin_menu', 'add_theme_menu');
-  \add_action('admin_init', 'register_settings');
+  \add_action('admin_menu', __NAMESPACE__ . 'add_theme_menu');
+  \add_action('admin_init', __NAMESPACE__ . 'register_settings');
   } else {
-  \add_action('init', 'register_menu');
+  \add_action('init', __NAMESPACE__ . 'register_menu');
   }
 ?>
