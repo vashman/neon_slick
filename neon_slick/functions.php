@@ -127,7 +127,7 @@ get_recent_cats(
 $options = (array)\get_option(RECENT_CATS);
   if (count($options) == 0){
   $options = array(
-  array = (
+  array (
     'title' => 'Recent Posts'
   , 'cats' => array('uncatagorized')
   , 'col' => 5
@@ -203,7 +203,7 @@ $cats = \get_categories(array('orderby' => 'name', 'order' => 'ASC'));
 foreach($cats as $cat){
 /* each option selected is part of a sub array */
 echo('<label for="'.RECENT_CATS_SELECTER.++$i.'"><input type="checkbox" '.
-  'id="'.RECENT_CATS_SELECTER.$i.'"name="'.RECENT_CATS.'[cats][.'$i'.]"'
+  'id="'.RECENT_CATS_SELECTER.$i.'"name="'.RECENT_CATS.'[cats]['.$i.']"'
   . 'value="'.$cat->slug.
   '"/>' . $cat->name . ' : ' . $cat->description. '</label>'
 );
